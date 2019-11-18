@@ -14,8 +14,12 @@ export default class TabBar extends Component{
     
     constructor(props) {
         super(props);
+
+        const {initialIndex} = props;
+        const selectedIndex = typeof initialIndex !== 'undefined' ? initialIndex : 0;
+
         this.state = {
-            selectedIndex: 0,
+            selectedIndex,
             defaultPage: 0,
             navFontSize: 12,
             navTextColor: "rgb(148, 148, 148)",
@@ -128,5 +132,3 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     }
 });
-
-

@@ -16,7 +16,9 @@ npm install react-native-nav-tabbar --save
 
 ```javascript
 import TabBar from 'react-native-nav-tabbar';
-<TabBar>
+<TabBar
+    initialIndex={1}
+    >
     <TabBar.Item
         icon={require('./images/Home.png')}
         selectedIcon={require('./images/HomeActive.png')}
@@ -42,7 +44,13 @@ import TabBar from 'react-native-nav-tabbar';
   </TabBar.Item>
 </TabBar>
 ```
-### Component props
+### TabBar props
+
+| prop | value | required/optional | description |
+| --- | --- | --- | --- |
+| initialIndex | integer | optional | opens the tab with the selected index |
+
+### Item props
 
 | prop | value | required/optional | description |
 | --- | --- | --- | --- |
