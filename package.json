@@ -1,6 +1,6 @@
 {
   "name": "react-native-nav-tabbar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A tabbar component for React Native",
   "private": false,
   "main": "TabBar.js",

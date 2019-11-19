@@ -30,6 +30,8 @@ export default class TabBar extends Component{
     render() {
         const {
             children,
+            centerIcon,
+            backgroundSelected
         } = this.props;
         const {
             selectedIndex,
@@ -39,13 +41,14 @@ export default class TabBar extends Component{
         } = this.state;
         return(
             <View style={[styles.container,this.props.style]}>
-                <TabBarCenter setBtn="0"/>
+                <TabBarCenter setBtn="0" centerIcon={centerIcon}/>
                 {children[selectedIndex]}
                 <View style={styles.content}>
                     {
                         React.Children.map(children,  (child,i) => {
                             const imgSrc = selectedIndex == i ? child.props.selectedIcon : child.props.icon;
                             const color = selectedIndex == i ? navTextColorSelected : navTextColor;
+                            const backgroundColor = selectedIndex == i ? backgroundSelected : null;
                             if(i==1) {
                                 return (
                                     <TouchableHighlight
@@ -58,7 +61,7 @@ export default class TabBar extends Component{
                                             }
                                         }
                                     >
-                                        <TabBarCenter setBtn="1"/>
+                                        <TabBarCenter setBtn="1" centerIcon={centerIcon}  backgroundSelected={backgroundColor}/>
                                     </TouchableHighlight> 
                                 );
                             }else{

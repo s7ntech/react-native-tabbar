@@ -18,6 +18,8 @@ npm install react-native-nav-tabbar --save
 import TabBar from 'react-native-nav-tabbar';
 <TabBar
     initialIndex={1}
+    centerIcon={<Icon size={32} color="#fff" name="home" />}
+    backgroundSelected="#6a0203"
     >
     <TabBar.Item
         icon={require('./images/Home.png')}
@@ -49,6 +51,8 @@ import TabBar from 'react-native-nav-tabbar';
 | prop | value | required/optional | description |
 | --- | --- | --- | --- |
 | initialIndex | integer | optional | opens the tab with the selected index |
+| centerIcon | component | optional | central icon component |
+| backgroundSelected | string | optional | background icon central color |
 
 ### Item props
 

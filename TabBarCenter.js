@@ -8,10 +8,12 @@ import {
 } from 'react-native';
 export default class TabBarCenter extends Component {
   render() {
-    const style = this.props.setBtn ==0 ? styles.centerView : styles.centerViewBtn;
+    const {setBtn, centerIcon, backgroundSelected} = this.props;
+    const style = setBtn == 0 ? styles.centerView : styles.centerViewBtn;
+    const backgroundColor = backgroundSelected || 'rgb(148, 148, 148)'
     return (
-        <View style={[style,styles.eqView]}>
-            <Text style={styles.centerViewText}>+</Text>
+        <View style={{...style,...styles.eqView, backgroundColor}}>
+            {centerIcon ? centerIcon : <Text style={styles.centerViewText}>+</Text>}
         </View>
     );
   }
